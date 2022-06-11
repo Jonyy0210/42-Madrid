@@ -31,7 +31,7 @@ int	*ft_range(int min, int max)
 	return (res);
 }
 
-void	print_test(int *test, int size)
+/*void	print_test(int *test, int size)
 {
 	int i;
 
@@ -70,4 +70,4 @@ int	main(void)
 	test4 = ft_range(10, -10);
 	printf("\n* test4 (10, -10): ");
 	print_test(test4, 0);
-}
+}*/
