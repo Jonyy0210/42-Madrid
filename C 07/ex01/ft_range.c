@@ -37,7 +37,7 @@ void	print_test(int *test, int size)
 
 	for (i = 0; i < size - 1; i++)
 	{
-		printf("%d - ", test[i]);
+		printf("%d ", test[i]);
 	}
 	if (size > 0)
 		printf("%d\n", test[size - 1]);
