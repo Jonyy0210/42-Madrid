@@ -31,7 +31,7 @@ int	*ft_range(int min, int max)
 	return (res);
 }
 
-/*void	print_test(int *test, int size)
+void	print_test(int *test, int size)
 {
 	int i;
 
@@ -45,29 +45,14 @@ int	*ft_range(int min, int max)
 
 int	main(void)
 {
-	int *test0;
-	int *test1;
-	int *test2;
-	int *test3;
-	int *test4;
+	int	*a;
+	int	*b;
 
-	test0 = ft_range(1, 11);
-	printf("\n* test0 (1, 11): ");
-	print_test(test0, 10);
+	a = ft_range(5, 10);
+	printf("Min; 5 Max; 10\n");
+	print_test(a, 5);
 
-	test1 = ft_range(-5, 0);
-	printf("\n* test1 (-5, 0): ");
-	print_test(test1, 5);
-
-	test2 = ft_range(3, 3);
-	printf("\n* test2 (3, 3): ");
-	print_test(test2, 0);
-
-	test3 = ft_range(4, 41);
-	printf("\n* test4 (4, 41): ");
-	print_test(test3, 37);
-
-	test4 = ft_range(10, -10);
-	printf("\n* test4 (10, -10): ");
-	print_test(test4, 0);
-}*/
+	b = ft_range(1, 100);
+	printf("Min; 1 Max; 100\n");
+	print_test(b, 99);
+}
