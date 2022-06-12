@@ -11,48 +11,25 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int	*ft_range(int min, int max)
+int	ft_iterative_factorial(int nb)
 {
-	int	i;
-	int	*res;
+	int	a;
 
-	i = 0;
-	res = malloc(sizeof(int) * (max - min));
-	if (min >= max || res == NULL)
+	if (nb < 0)
 		return (0);
-	while (min < max)
+	a = nb * nb;
+	while (nb > 1)
 	{
-		res[i] = min;
-		i++;
-		min++;
+		a *= --nb;
 	}
-	return (res);
-}
-
-void	print_test(int *test, int size)
-{
-	int i;
-
-	for (i = 0; i < size - 1; i++)
-	{
-		printf("%d ", test[i]);
-	}
-	if (size > 0)
-		printf("%d\n", test[size - 1]);
+	return (a);
 }
 
 int	main(void)
 {
-	int	*a;
-	int	*b;
+	int	a = 5;
 
-	a = ft_range(5, 10);
-	printf("Min; 5 Max; 10\n");
-	print_test(a, 5);
-
-	b = ft_range(1, 100);
-	printf("\nMin; 1 Max; 100\n");
-	print_test(b, 99);
+	printf("%i\n", ft_iterative_factorial(a));
+	return (0);
 }
