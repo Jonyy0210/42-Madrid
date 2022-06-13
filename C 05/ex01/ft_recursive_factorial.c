@@ -12,24 +12,20 @@
 
 #include <stdio.h>
 
-int	ft_iterative_factorial(int nb)
+int	ft_recursive_factorial(int nb)
 {
-	int	a;
-
-	a = 1;
 	if (nb < 0)
 		return (0);
-	while (nb > 1)
-	{
-		a *= nb--;
-	}
-	return (a);
+	else if (nb <= 1)
+		return (1);
+	else
+		return (nb * ft_recursive_factorial(nb - 1));
 }
 
 int	main(void)
 {
 	int	a = 4;
 
-	printf("%i\n", ft_iterative_factorial(a));
+	printf("%i\n", ft_recursive_factorial(a));
 	return (0);
 }
