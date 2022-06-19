@@ -44,5 +44,5 @@ int	main(void)
 
 	a = ft_strdup(b);
 	printf("%s\n", a);
-    return (0);
+	return (0);
 }
