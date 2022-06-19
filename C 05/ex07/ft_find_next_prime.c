@@ -12,24 +12,38 @@
 
 #include <stdio.h>
 
-int	ft_sqrt(int nb)
+int	ft_is_prime(int nb)
 {
 	int	a;
 
-	a = 1;
-	while (a * a != nb && a < 46341)
+	a = 2;
+	if (nb < 2)
+		return 0;
+	while (a <= nb / 2)
 	{
+		if (nb % a == 0)
+			return 0;
 		a++;
 	}
-	if (a * a == nb)
+	return 1;
+}
+
+int	ft_find_next_prime(int nb)
+{
+	while (ft_is_prime(nb) == 0)
 	{
-		return (a);
+		nb++;
 	}
-	return (0);
+	return nb;
 }
 
 int	main(void)
 {
-	printf("%i\n", ft_sqrt(25));
-	return (0);
+	int	a = 0;
+	while (a < 25)
+	{
+		printf("%i = %i\n", a, ft_find_next_prime(a));
+		a++;
+	}
+	return 0;
 }
