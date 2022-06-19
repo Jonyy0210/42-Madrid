@@ -39,7 +39,7 @@ char	*ft_strdup(char *src)
 
 int	main(void)
 {
-    char	*a;
+	char	*a;
 	char	*b = "Adios 42, hasta pronto";
 
 	a = ft_strdup(b);
