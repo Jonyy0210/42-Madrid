@@ -21,7 +21,7 @@ int	*ft_range(int min, int max)
 	i = 0;
 	res = malloc(sizeof(int) * (max - min));
 	if (min >= max || res == NULL)
-		return (0);
+		return 0;
 	while (min < max)
 	{
 		res[i] = min;
@@ -31,28 +31,22 @@ int	*ft_range(int min, int max)
 	return (res);
 }
 
-void	print_test(int *test, int size)
-{
-	int i;
-
-	for (i = 0; i < size - 1; i++)
-	{
-		printf("%d ", test[i]);
-	}
-	if (size > 0)
-		printf("%d\n", test[size - 1]);
-}
-
 int	main(void)
 {
 	int	*a;
 	int	b;
+	int	i = 0;
 	int	min = 1;
 	int	max = 16;
 
 	b = max - min;
 	a = ft_range(min, max);
 	printf("Min; %i Max; %i\n", min, max);
-	print_test(a, b);
-	return (0);
+	while (i < b - 1)
+	{
+		printf("%d ", a[i]);
+		i++;
+	}
+	printf("%d\n", a[i]);
+	return 0;
 }
