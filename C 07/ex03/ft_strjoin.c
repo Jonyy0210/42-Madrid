@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   42Madrid.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcatalan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,48 +13,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_ultimate_range(int **range, int min, int max)
-{
+char	*ft_strjoin(int size, char **strs, char *sep)
+{	
+	char	*res;
+	int	a;
+	int	b;
 	int	i;
-	int	*res;
 
+	b = 0;
 	i = 0;
-	if (min >= max)
+	res = malloc(sizeof(strs));
+	if (size == 0)
 	{
-		*range = NULL;
+		res = NULL;
 		return 0;
 	}
-	res = malloc(sizeof(int) * (max - min));
 	if (res == NULL)
+		return 0;
+	while (b < size)
 	{
-		*range = NULL;
-		return -1;
+		a = 0;
+		while (strs[b][a] != '\0')
+		{
+			res[i++] = strs[b][a++];
+		}
+		a = 0;
+		while (sep[a] != '\0' && b < size - 1)
+		{
+			res[i++] = sep[a++];
+		}
+		b++;
 	}
-	while (min < max)
-	{
-		res[i] = min;
-		i++;
-		min++;
-	}
-	*range = res;
-	return (i);
+	res[i] = '\0';
+	return (res);
 }
 
 int	main(void)
 {
-	int	*a;
-	int	min = 0;
-	int	max = 5;
+	char	*cadena[3];
 
-	while (max <= 9)
-	{
-		printf("%d\n", ft_ultimate_range(&a, min, max));
-		max++;
-	}
-	while (min <= 5)
-	{
-		printf("%d\n", ft_ultimate_range(&a, min, max));
-		min++;
-	}
+	cadena[0] = "Hola";
+	cadena[1] = "42";
+	cadena[2] = "Madrid";
+	printf("%s", ft_strjoin(3, cadena, " - "));
 	return 0;
 }
